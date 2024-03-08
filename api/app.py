@@ -1,16 +1,18 @@
-from flask import Flask, jsonify
+from flask import Flask, json
 import requests
 from bs4 import BeautifulSoup
+from cachetools import cached
 
 app = Flask(__name__)
 
 @app.route('/api/top-dramas', methods=['GET'])
+@cached(cache={})
 def get_top_dramas():
     # Lista para armazenar os resultados
     dramas = []
 
     # Iterar sobre as 20 primeiras páginas
-    for page in range(1, 3):
+    for page in range(1, 21):
         # URL do site
         url = f"https://br.mydramalist.com/shows/top?page={page}"
 
@@ -50,10 +52,10 @@ def get_top_dramas():
                 dramas.append(drama)
 
         else:
-            return jsonify({"error": f"Erro ao acessar o site: {response.status_code}"})
+            return json({"error": f"Erro ao acessar o site: {response.status_code}"})
 
     # Retorna os resultados como JSON em UTF-8
-    return jsonify(dramas)
+    return json.dumps(dramas, ensure_ascii=False)
 
 if __name__ == '__main__':
     app.run(debug=True)
