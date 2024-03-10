@@ -30,24 +30,24 @@ def get_top_dramas():
             # Iterar sobre os dados encontrados
             for bloco in bloco_dramas:
                 # Extrair informações
-                link_dorama = bloco['href']
+                linkDorama = bloco['href']
                 
                 # Utilizando o atributo data-src para obter a imagem
                 link_imagem_elemento = bloco.find("img", class_="img-responsive")
-                link_imagem = link_imagem_elemento['data-src'].replace("s.jpg", "c.jpg") if link_imagem_elemento else ""
+                linkImagem = link_imagem_elemento['data-src'].replace("s.jpg", "c.jpg") if link_imagem_elemento else ""
 
                 titulo_elemento = bloco.find_next("h6", class_="text-primary title")
-                nome_dorama = titulo_elemento.text.strip() if titulo_elemento else ""
+                nomeDorama = titulo_elemento.text.strip() if titulo_elemento else ""
 
                 classificacao_elemento = bloco.find_next("span", class_="p-l-xs score")
-                classificacao_valor = classificacao_elemento.text.strip() if classificacao_elemento else ""
+                classificacaoValor = classificacao_elemento.text.strip() if classificacao_elemento else ""
 
                 # Adicionar os dados à lista de dramas
                 drama = {
-                    "Imagem": link_imagem,
-                    "Título": nome_dorama,
-                    "Link": link_dorama,
-                    "Classificação": classificacao_valor
+                    "imagem": linkImagem,
+                    "titulo": nomeDorama,
+                    "link": linkDorama,
+                    "classificacao": classificacaoValor
                 }
                 dramas.append(drama)
 
