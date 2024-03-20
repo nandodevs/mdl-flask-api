@@ -19,13 +19,13 @@ def scrape_doramas(url):
 
     return doramas
 
-@app.route('/api/doramas/legendado', methods=['GET'])
+@app.route('/api/series-legendado', methods=['GET'])
 def get_legendado_doramas():
     url = 'https://doramasonline.org/br/generos/legendado/'
     doramas = scrape_doramas(url)
     return jsonify(doramas)
 
-@app.route('/api/doramas/dublado', methods=['GET'])
+@app.route('/api/series-dublado', methods=['GET'])
 def get_dublado_doramas():
     url = 'https://doramasonline.org/br/generos/dublado/'
     doramas = scrape_doramas(url)

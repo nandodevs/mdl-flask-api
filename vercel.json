@@ -15,11 +15,11 @@
             "dest": "api/doramas-stars.py"
         },
         {
-            "src": "/api/doramas-series/doramas/legendado",
+            "src": "/api/series-legendado",
             "dest": "api/doramas-series.py"
         },
         {
-            "src": "/api/doramas-series/doramas/dublado",
+            "src": "/api/series-dublado",
             "dest": "api/doramas-series.py"
         }
     ]
