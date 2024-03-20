@@ -5,7 +5,7 @@ from cachetools import cached
 
 app = Flask(__name__)
 
-@app.route('/api/top-dramas', methods=['GET'])
+@app.route('/api/doramas-stars', methods=['GET'])
 @cached(cache={})
 def get_top_dramas():
     # Lista para armazenar os resultados
