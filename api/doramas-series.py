@@ -9,11 +9,11 @@ def scrape_doramas(url):
     soup = BeautifulSoup(response.content, 'html.parser')
     doramas = []
 
-    for item in soup.find_all('div', class_='item'):
+    for item in soup.find_all('article', class_='item movies'):
         dorama = {}
-        dorama['title'] = item.find('h2').text.strip()
+        dorama['title'] = item.find('h3').text.strip()
         dorama['image'] = item.find('img')['src']
-        dorama['year'] = item.find('span', class_='date').text.strip()
+        dorama['year'] = item.find('span').text.strip()
         dorama['link'] = item.find('a')['href']
         doramas.append(dorama)
 
@@ -24,7 +24,6 @@ def get_legendado_doramas():
     url = 'https://doramasonline.org/br/generos/legendado/'
     doramas = scrape_doramas(url)
     return jsonify(doramas)
-
 
 @app.route('/doramas/dublado', methods=['GET'])
 def get_dublado_doramas():
