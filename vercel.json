@@ -1,19 +1,26 @@
 {
-    "version": 2,
     "builds": [
-      {
-        "src": "api/doramas-stars.py",
-        "use": "@vercel/python"
-      },
-      {
-        "src": "api/doramas-series.py",
-        "use": "@vercel/python"
-      }
+        {
+            "src": "/api/doramas-stars.py", 
+            "use": "@vercel/python"
+        },
+        {
+            "src": "/api/doramas-series.py", 
+            "use": "@vercel/python"
+        }
     ],
     "routes": [
-      { "handle": "filesystem" },
-      { "src": "/doramas-stars", "dest": "api/doramas-stars.py" },
-      { "src": "/doramas-series", "dest": "api/doramas-series.py" }
+        {
+            "src": "/api/doramas-stars",
+            "dest": "api/doramas-stars.py"
+        },
+        {
+            "src": "/api/series-legendado",
+            "dest": "api/doramas-series.py"
+        },
+        {
+            "src": "/api/series-dublado",
+            "dest": "api/doramas-series.py"
+        }
     ]
-  }
-  
+}
