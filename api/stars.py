@@ -58,4 +58,4 @@ def get_top_dramas():
     return json.dumps(dramas, ensure_ascii=False)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0')
