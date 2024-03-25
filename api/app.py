@@ -58,14 +58,14 @@ def get_doramas():
     return json.dumps(dramas, ensure_ascii=False)
 
 
-@app.route('/api/series/dublado', methods=['GET'])
+@app.route('/api/series/dublado/', methods=['GET'])
 @cached(cache={})
-def series_dublado(url, page):
+def series_dublado():
     # Lista para armazenar os resultados
     series = []
 
     # Iterar sobre as 20 primeiras páginas
-    for page in range(1, 25):
+    for page in range(1,9):
         # URL do site
         url = f'https://doramasonline.org/br/generos/dublado/page/{page}/'
 
@@ -76,6 +76,7 @@ def series_dublado(url, page):
         if response.status_code == 200:
             # Criação do objeto BeautifulSoup
             soup = BeautifulSoup(response.content, "html.parser")
+            
 
             # Iterar sobre os itens encontrados na página
             for item in soup.find_all('article', class_='item movies'):

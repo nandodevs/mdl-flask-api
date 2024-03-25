@@ -15,7 +15,7 @@
             "dest": "api/app.py"
         },
         {
-            "src": "/api/series/dublado",
+            "src": "/api/series/dublado/",
             "dest": "api/app.py"
         }
     ]
