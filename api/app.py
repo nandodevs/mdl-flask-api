@@ -65,7 +65,7 @@ def series_dublado():
     series = []
 
     # Iterar sobre as 20 primeiras páginas
-    for page in range(1,9):
+    for page in range(1,8):
         # URL do site
         url = f'https://doramasonline.org/br/generos/dublado/page/{page}/'
 
@@ -100,7 +100,7 @@ def series_dublado():
 @cached(cache={})
 def series_legendado():
     # Lista para armazenar os resultados
-    series = []
+    series_legendado = []
 
     # Iterar sobre as 20 primeiras páginas
     for page in range(1, 25):
@@ -126,13 +126,13 @@ def series_legendado():
                 # Verificar se o campo 'Year' não está vazio antes de adicionar à lista
                 if year_element:
                     year = year_element.text.strip()
-                    series.append({'title': title, 'image': image, 'year': year, 'link': link})
+                    series_legendado.append({'title': title, 'image': image, 'year': year, 'link': link})
 
         else:
             return json.dumps({"error": f"Erro ao acessar o site: {response.status_code}"})
 
     # Retorna os resultados como JSON em UTF-8
-    return json.dumps(series, ensure_ascii=False)
+    return json.dumps(series_legendado, ensure_ascii=False)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0')
