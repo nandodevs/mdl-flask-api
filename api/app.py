@@ -135,4 +135,4 @@ def series_legendado():
     return json.dumps(series_legendado, ensure_ascii=False)
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0')
+    app.run()
