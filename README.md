@@ -1,36 +1,124 @@
-# Web Scraping de Top Dramas - MyDramaList
+## 🐍 MDL Flask API
 
-Este projeto realiza web scraping do site MyDramaList para obter informações sobre os melhores Doramas da atualidade, incluindo imagem, título, link e classificação. Os dados são disponibilizados através de uma API Flask.
+![Python](https://img.shields.io/badge/Python-3.10-blue?logo=python)
+![Flask](https://img.shields.io/badge/Flask-2.x-green?logo=flask)
+![WebScraping](https://img.shields.io/badge/WebScraping-BeautifulSoup-orange?logo=beautifulsoup4)
 
-## Tecnologias Utilizadas
+### 📌 Descrição
 
-- **Python:** A linguagem de programação principal utilizada no projeto.
-- **Flask:** Um framework web leve para criar a API.
-- **BeautifulSoup:** Uma biblioteca Python para fazer web scraping de maneira fácil.
-- **Requests:** Uma biblioteca HTTP para realizar requisições.
+**MDL Flask API** é uma aplicação simples para coletar informações de **Doramas (K-Dramas)** no [MyDramaList](https://mydramalist.com/) usando **Web Scraping com BeautifulSoup** e expor esses dados através de uma **API RESTful construída com Flask**.
 
-## Como Utilizar
+Esse projeto demonstra como unir **extração de dados da web**, **criação de endpoints com Flask** e **retorno em JSON**, servindo como um ponto de partida para projetos mais robustos de **Engenharia de Dados**, **APIs ou Automação**.
 
-1. Certifique-se de ter o Python instalado no seu sistema.
-2. Instale as dependências executando o comando: `pip install Flask requests beautifulsoup4`.
-3. Execute o script Python usando o comando: `python nome_do_script.py`.
-4. Acesse a API em `http://localhost:5000/api/top-dramas` no seu navegador ou através de um cliente de API.
+---
 
-## Exemplo de Resposta da API
+## 🚀 Funcionalidades
 
-```json
-[
-  {
-    "Imagem": "https://i.mydramalist.com/2w44jE_4s.jpg?v=1",
-    "Título": "Melancia Cintilante",
-    "Link": "/739603-sparkling-watermelon",
-    "Classificação": "9.2"
-  },
-  // Outros dramas...
-]
+* 📄 **Web Scraping:** coleta informações de dramas, como título, sinopse e nota.
+* 🔗 **API REST:** endpoints para acessar os dados de forma estruturada.
+* ⚙️ **Estrutura simples:** fácil de entender, ideal para estudos.
+* ✅ **JSON Output:** dados limpos prontos para consumo por outros sistemas.
+
+---
+
+## 📸 Imagens
+
+> 📌 **Sugestão:** Adicione prints da aplicação rodando!
+> Por exemplo:
+>
+> * Screenshot da API retornando JSON no Postman ou navegador.
+> * Código em execução no terminal.
+> * Diagrama simples do fluxo (*web scraping ➜ API ➜ consumo*).
+
+```markdown
+![API funcionando]("https://media.licdn.com/dms/image/v2/D4D22AQF90vUxEG9itg/feedshare-shrink_800/feedshare-shrink_800/0/1710109607367?e=1755129600&v=beta&t=CPtHomnP-SpRB5ttwcmWVUQq2uMZ4N03K2XDzfjprB8")
+![Fluxo do Projeto](images/diagram.png)
 ```
-## Contribuições
-Contribuições são bem-vindas! Sinta-se à vontade para abrir uma issue ou enviar um pull request.
 
-## Licença
-Este projeto está licenciado sob a Licença MIT - veja o arquivo LICENSE.md para detalhes.
+---
+
+## 📁 Estrutura do Projeto
+
+```plaintext
+📂 mdl-flask-api/
+ ├── app.py
+ ├── scraper.py
+ ├── requirements.txt
+ ├── README.md
+ ├── images/
+ │    ├── api_response.png
+ │    └── diagram.png
+```
+
+---
+
+## 🛠️ Tecnologias Utilizadas
+
+* **Python 3.10**
+* **Flask**
+* **BeautifulSoup**
+* **Requests**
+
+---
+
+## ▶️ Como Executar
+
+1️⃣ Clone o repositório:
+
+```bash
+git clone https://github.com/nandodevs/mdl-flask-api.git
+cd mdl-flask-api
+```
+
+2️⃣ Crie um ambiente virtual:
+
+```bash
+python -m venv venv
+source venv/bin/activate  # Linux/Mac
+venv\Scripts\activate     # Windows
+```
+
+3️⃣ Instale as dependências:
+
+```bash
+pip install -r requirements.txt
+```
+
+4️⃣ Execute o projeto:
+
+```bash
+python app.py
+```
+
+Acesse: [http://localhost:5000](http://localhost:5000)
+
+---
+
+## 📌 Próximos Passos
+
+* [ ] Adicionar testes automatizados.
+* [ ] Melhorar tratamento de erros do scraping.
+* [ ] Criar documentação OpenAPI (Swagger).
+* [ ] Implantar em um servidor cloud (Heroku, Render, Railway).
+
+---
+
+## 🤝 Contribuições
+
+Fique à vontade para abrir **Issues**, enviar **Pull Requests** ou sugerir melhorias!
+
+---
+
+## 📄 Licença
+
+Este projeto está licenciado sob a **MIT License**.
+
+---
+
+## ✨ Autor
+
+**Sisnando Junior**
+[LinkedIn](https://www.linkedin.com/in/sisnando-junior/) • [GitHub](https://github.com/nandodevs)
+
+---
+
