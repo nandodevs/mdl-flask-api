@@ -23,17 +23,8 @@ Esse projeto demonstra como unir **extração de dados da web**, **criação de 
 
 ## 📸 Imagens
 
-> 📌 **Sugestão:** Adicione prints da aplicação rodando!
-> Por exemplo:
->
-> * Screenshot da API retornando JSON no Postman ou navegador.
-> * Código em execução no terminal.
-> * Diagrama simples do fluxo (*web scraping ➜ API ➜ consumo*).
+![API funcionando](images/api.jpeg)
 
-```markdown
-![API funcionando]("https://media.licdn.com/dms/image/v2/D4D22AQF90vUxEG9itg/feedshare-shrink_800/feedshare-shrink_800/0/1710109607367?e=1755129600&v=beta&t=CPtHomnP-SpRB5ttwcmWVUQq2uMZ4N03K2XDzfjprB8")
-![Fluxo do Projeto](images/diagram.png)
-```
 
 ---
 
@@ -42,12 +33,12 @@ Esse projeto demonstra como unir **extração de dados da web**, **criação de 
 ```plaintext
 📂 mdl-flask-api/
  ├── app.py
- ├── scraper.py
+ ├── .gitignore
+ ├── Procfile
  ├── requirements.txt
  ├── README.md
  ├── images/
- │    ├── api_response.png
- │    └── diagram.png
+ │    ├── api.jpeg
 ```
 
 ---
